@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TolTransform | Joseph Litjens</title>
+<meta name="description" content="A kinematic tolerance analysis and inverse allocation tool for precision mechanical and optical assemblies.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TolTransform | Joseph Litjens">
+<meta property="og:description" content="A kinematic tolerance analysis and inverse allocation tool for precision mechanical and optical assemblies.">
+<meta property="og:url" content="https://josephlitjens.github.io/projects/toltransform.html">
+<meta property="og:image" content="https://josephlitjens.github.io/assets/toltransform/hero-interferometer.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="site-header" id="top">
+  <nav class="nav">
+    <a class="nav-logo" href="../index.html">JL</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger">Projects <span class="nav-caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="shutter.html">Shutter</a></li>
+          <li><a href="toltransform.html">TolTransform</a></li>
+          <li><a href="linear-stage.html">Linear Stage</a></li>
+          <li><a href="robotics.html">Robotics</a></li>
+          <li><a href="lhr.html">Liquid Handling Robot</a></li>
+          <li><a href="hull-mold.html">Hull Design</a></li>
+          <li class="nav-dropdown-divider"></li>
+          <li><a href="other.html">Other Projects</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="../index.html">← All Projects</a></div>
+
+<div class="project-hero">
+  <div class="project-hero-img"><img src="../assets/toltransform/hero-interferometer.png" alt="Rendered optical interferometer setup analyzed by TolTransform"></div>
+  <div class="project-hero-head reveal">
+    <p class="project-hero-tag">Personal Software Project</p>
+    <h1>TolTransform</h1>
+    <div class="project-hero-meta">
+      <span><strong>Role:</strong> Developer</span>
+      <span><strong>Build time:</strong> ~1 week, AI-assisted</span>
+      <span><strong>Stack:</strong> Python</span>
+      <span><a href="https://github.com/JosephLitjens/toltransform" target="_blank" rel="noopener" style="color: var(--accent);">View on GitHub ↗</a></span>
+    </div>
+    <p class="skills-used-label">Key Skills</p>
+    <ul class="tag-row">
+      <li>Software Development</li>
+      <li>Kinematics</li>
+      <li>Tolerance Analysis</li>
+      <li>Monte Carlo Simulation</li>
+      <li>Optimization</li>
+    </ul>
+  </div>
+</div>
+
+<div class="project-body">
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Overview</span></h2>
+    <p>Tolerance error budgeting for precision optomechanical assemblies is usually done in large spreadsheets. That works fine for simple linear stack-ups, but breaks down once an assembly has parallel constraint chains, shared reference frames, or needs inverse allocation (working backward from a performance requirement to per-interface tolerances). I built TolTransform to replace that workflow with a proper kinematic graph model.</p>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">The Model</span></h2>
+    <p>Assemblies are represented as directed graphs, with coordinate frames as nodes and toleranced rigid transforms as edges. Tolerances are modeled as small twists in se(3), the Lie algebra for rigid-body motion, giving 3 translational and 3 rotational degrees of freedom per interface, and propagated along chains using the adjoint representation.</p>
+    <p>For exact propagation, the tool runs Monte Carlo simulation (50,000 to 500,000 trials), producing worst-case envelopes, percentile tables, confidence ellipsoids, and sensitivity rankings. The reverse direction, working backward from a performance requirement to per-interface tolerance bounds, is solved as an optimization problem, with an iterative loop that reconciles the linear allocation against the nonlinear Monte Carlo results.</p>
+    <p>I validated the approach against three physical benchmarks (a linear stack-up, a sine-bar lever-arm case, and common-ancestor cancellation) before trusting it on real assemblies.</p>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">The Tool</span></h2>
+    <p>The GUI is built in PySide6 (Qt), with a graph editor, tolerance editor, run panel, results viewer, and a 3D frame viewer for visualizing the assembly directly.</p>
+
+    <h3>Graph &amp; Tolerance Editor</h3>
+    <p>Frames and edges are defined explicitly. Each edge carries per-DoF distributions, bounds, and σ-levels, with bulk-apply tools for quickly setting up large assemblies.</p>
+    <figure class="figure-full">
+      <img src="../assets/toltransform/graph-tolerance-editor.png" alt="TolTransform graph editor and tolerance editor panels">
+      <figcaption>Graph Editor (left) and Tolerance Editor (right), defining an interferometer assembly's kinematic structure and per-edge tolerances.</figcaption>
+    </figure>
+
+    <h3>3D Frame Viewer</h3>
+    <p>The frame viewer renders every coordinate frame in the graph in 3D, so you can check the kinematic structure visually before running an analysis. Below is the interferometer setup from the top of this page next to its frame viewer representation, so you can see how the physical assembly maps onto the graph.</p>
+    <div class="pair">
+      <figure><div class="gallery-img-box"><img src="../assets/toltransform/hero-interferometer.png" alt="Rendered optical interferometer setup analyzed by TolTransform"></div><figcaption>The interferometer assembly being analyzed.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/toltransform/frame-viewer.png" alt="TolTransform 3D frame viewer showing a kinematic graph"></div><figcaption>The same assembly in the 3D Frame Viewer: 13 frames, each with its local coordinate axes.</figcaption></figure>
+    </div>
+
+    <h3>Sensitivity &amp; Results</h3>
+    <p>The Pareto sensitivity breakdown ranks which interfaces actually drive output variance. In this example, three DoF on a single edge account for nearly 90% of it, which tells you where tightening tolerance is worth the manufacturing cost and where it isn't.</p>
+    <figure class="figure-full">
+      <img src="../assets/toltransform/pareto-sensitivity.png" alt="Pareto sensitivity breakdown chart">
+      <figcaption>Pareto Sensitivity Breakdown: percentage of total output variance attributable to each edge/DoF.</figcaption>
+    </figure>
+
+    <p>The Results Viewer checks every interface envelope against its target and flags pass/fail, including when inverse allocation can't converge to a target budget. That's useful information on its own: it tells you the requirement is infeasible with the current architecture, not just that a search failed.</p>
+    <figure class="figure-full">
+      <img src="../assets/toltransform/results-viewer.png" alt="TolTransform results viewer showing pass/fail envelope checks">
+      <figcaption>Results Viewer: per-edge allocation and per-interface envelope pass/fail checks.</figcaption>
+    </figure>
+  </section>
+
+</div>
+
+<div class="project-nav-footer">
+  <a href="shutter.html" class="btn btn-ghost">← Previous: Shutter</a>
+  <a href="linear-stage.html" class="btn btn-ghost">Next: Linear Stage →</a>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Joseph Litjens. Built with plain HTML/CSS/JS.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

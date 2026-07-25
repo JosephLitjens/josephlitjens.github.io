@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Other Projects | Joseph Litjens</title>
+<meta name="description" content="Shorter write-ups: an instrumentation rack, a BNL flexure rotation stage, an analog PID controller lab, and a heat transfer study.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Other Projects | Joseph Litjens">
+<meta property="og:description" content="Shorter write-ups: an instrumentation rack, a BNL flexure rotation stage, an analog PID controller lab, and a heat transfer study.">
+<meta property="og:url" content="https://josephlitjens.github.io/projects/other.html">
+<meta property="og:image" content="https://josephlitjens.github.io/assets/other/rotstage-flexure-photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="site-header" id="top">
+  <nav class="nav">
+    <a class="nav-logo" href="../index.html">JL</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger">Projects <span class="nav-caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="shutter.html">Shutter</a></li>
+          <li><a href="toltransform.html">TolTransform</a></li>
+          <li><a href="linear-stage.html">Linear Stage</a></li>
+          <li><a href="robotics.html">Robotics</a></li>
+          <li><a href="lhr.html">Liquid Handling Robot</a></li>
+          <li><a href="hull-mold.html">Hull Design</a></li>
+          <li class="nav-dropdown-divider"></li>
+          <li><a href="other.html">Other Projects</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="../index.html">← All Projects</a></div>
+
+<div class="project-hero">
+  <div class="project-hero-head reveal" style="padding-top: 20px;">
+    <p class="project-hero-tag">Smaller Projects</p>
+    <h1>Other Projects</h1>
+    <p class="section-lead" style="margin-top: 16px;">Four shorter write-ups: worth including for completeness, but not deep enough individually to warrant full case-study pages.</p>
+  </div>
+</div>
+
+<div class="project-body" style="padding-top: 0;">
+
+  <div class="other-entry reveal">
+    <h2>Custom Electronics Instrumentation Rack</h2>
+    <div class="other-meta">Stony Brook University · Two-Photon Microscope Build</div>
+    <ul class="tag-row" style="margin-top: 0;">
+      <li>Mechanical Design</li>
+      <li>CAD</li>
+      <li>Manufacturing</li>
+    </ul>
+    <p>A custom 19" instrumentation rack designed in Inventor from off-the-shelf aluminum extrusion, rack rails, and casters, built to hold the electronics for a two-photon microscope build. Adding casters (most commercial racks don't have them) made it far easier to move in and out of the room, and the total cost came in at roughly $1,200 in parts, about 25% cheaper than commercial alternatives, which also lacked the casters and custom mounting rails.</p>
+    <div class="gallery gallery-2">
+      <figure><div class="gallery-img-box"><img src="../assets/other/rack-1.jpg" alt="Assembled instrumentation rack, empty"></div><figcaption>The assembled rack frame.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/other/rack-2.jpg" alt="Instrumentation rack loaded with equipment"></div><figcaption>The rack loaded and in service.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="other-entry reveal">
+    <h2>Flexure-Based Rotation Stage</h2>
+    <div class="other-meta">Brookhaven National Laboratory · NSLS II · Summer 2024</div>
+    <ul class="tag-row" style="margin-top: 0;">
+      <li>Mechanical Design</li>
+      <li>FEA</li>
+      <li>Precision Engineering</li>
+    </ul>
+    <p>A conceptual design and proof-of-concept prototype for a high-precision, flexure-based rotation stage intended for in-vacuum X-ray laminography, a next-generation microchip imaging application requiring ultra-high rotational concentricity without sliding contacts. FEA in Ansys predicted sub-3 nm runout in the sensitive direction before committing to the flexure geometry.</p>
+    <div class="gallery gallery-3">
+      <figure><div class="gallery-img-box"><img src="../assets/other/rotstage-flexure-photo-crop.jpg" alt="Machined flexure disc prototype"></div><figcaption>The machined flexure disc (physical prototype).</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/other/rotstage-fea-stress.jpg" alt="FEA stress analysis of the flexure disc"></div><figcaption>FEA stress analysis of the flexure geometry.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/other/rotstage-fea-deform.jpg" alt="FEA deformation analysis of the rotation stage"></div><figcaption>Total deformation under an applied moment.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="other-entry reveal">
+    <h2>Analog PID Controller</h2>
+    <div class="other-meta">Coursework · MEC 411, Control System Analysis &amp; Design</div>
+    <ul class="tag-row" style="margin-top: 0;">
+      <li>Controls Theory</li>
+      <li>Analog Electronics</li>
+      <li>Circuit Design</li>
+    </ul>
+    <p>A physical breadboard implementation of a PID controller for DC motor speed control, built around an op-amp circuit rather than a digital microcontroller. Theoretical and experimental step responses tracked closely against each other, validating the analog design against the same theory used in the digital controllers on the <a href="robotics.html" style="color: var(--accent-dim);">Robotics</a> page.</p>
+    <div class="gallery gallery-2">
+      <figure><div class="gallery-img-box"><img src="../assets/other/pid-lab-photo.jpg" alt="Analog PID controller breadboard circuit wired to a motor stage"></div><figcaption>The op-amp PID circuit, wired to the motor stage under test.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/other/pid-lab-plot.jpg" alt="Theoretical vs experimental step response plot"></div><figcaption>Theoretical vs. experimental step response, close agreement across the full settling period.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="other-entry reveal">
+    <h2>Stegosaurus Fin Heat Transfer</h2>
+    <div class="other-meta">Coursework · MEC 305, Heat and Mass Transfer</div>
+    <ul class="tag-row" style="margin-top: 0;">
+      <li>Heat Transfer Analysis</li>
+      <li>Hand Calculations</li>
+      <li>Experimental Testing</li>
+    </ul>
+    <p>A small-team final project analyzing heat transfer from a prototype "veined" fin, modeled loosely on stegosaurus plates, which are hypothesized to have served a thermoregulatory function. Using a thermal circuit diagram, free/forced convection coefficient correlations, and conservation of energy, the team predicted total heat transfer within 22% of the experimental result.</p>
+    <div class="gallery gallery-2">
+      <figure><div class="gallery-img-box"><img src="../assets/other/fin-setup.jpg" alt="Experimental setup for the stegosaurus fin heat transfer test"></div><figcaption>The test setup: heated water bag submerged in an ice bath, tubing routed through the fin.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/other/fin-calculations.png" alt="Thermal circuit and heat transfer calculations for the fin"></div><figcaption>Thermal resistance circuit and hand-calculated heat transfer values.</figcaption></figure>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav-footer">
+  <a href="hull-mold.html" class="btn btn-ghost">← Previous: Hull Design</a>
+  <a href="../index.html" class="btn btn-ghost">Back to Home →</a>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Joseph Litjens. Built with plain HTML/CSS/JS.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

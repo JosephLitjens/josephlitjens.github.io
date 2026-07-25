@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robotics Projects | Joseph Litjens</title>
+<meta name="description" content="Robot kinematics and control simulations: PD/PID arm control, inverse kinematics, and workspace analysis.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Robotics Projects | Joseph Litjens">
+<meta property="og:description" content="Robot kinematics and control simulations: PD/PID arm control, inverse kinematics, and workspace analysis.">
+<meta property="og:url" content="https://josephlitjens.github.io/projects/robotics.html">
+<meta property="og:image" content="https://josephlitjens.github.io/assets/robotics/workspace-3d-envelope.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="site-header" id="top">
+  <nav class="nav">
+    <a class="nav-logo" href="../index.html">JL</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger">Projects <span class="nav-caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="shutter.html">Shutter</a></li>
+          <li><a href="toltransform.html">TolTransform</a></li>
+          <li><a href="linear-stage.html">Linear Stage</a></li>
+          <li><a href="robotics.html">Robotics</a></li>
+          <li><a href="lhr.html">Liquid Handling Robot</a></li>
+          <li><a href="hull-mold.html">Hull Design</a></li>
+          <li class="nav-dropdown-divider"></li>
+          <li><a href="other.html">Other Projects</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="../index.html">← All Projects</a></div>
+
+<div class="project-hero">
+  <div class="project-hero-img"><img src="../assets/robotics/workspace-3d-envelope.png" alt="3D robot workspace with bounding envelope"></div>
+  <div class="project-hero-head reveal">
+    <p class="project-hero-tag">Graduate Coursework · MEC 529 / MEC 549</p>
+    <h1>Robotics Projects</h1>
+    <div class="project-hero-meta">
+      <span><strong>Courses:</strong> Intro to Robotics, Robot Dynamics &amp; Control</span>
+      <span><strong>Stack:</strong> Python</span>
+    </div>
+    <p class="skills-used-label">Key Skills</p>
+    <ul class="tag-row">
+      <li>Controls Theory</li>
+      <li>Kinematics</li>
+      <li>Trajectory Generation</li>
+      <li>Simulation</li>
+      <li>Python Programming</li>
+    </ul>
+  </div>
+</div>
+
+<div class="project-body">
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Overview</span></h2>
+    <p>Two separate simulations built from scratch for graduate robotics coursework, implementing the theory directly in Python rather than relying on a robotics framework to do it for me: a 2-link planar arm used purely to compare feedback controllers, and a 7-DoF arm (modeled on the Franka Emika Panda) for full kinematics, trajectory generation, and workspace analysis.</p>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">2R Planar Arm · Controller Comparison</span></h2>
+    <p>A controls-only exercise on a simple 2-link planar arm: no kinematics chain or trajectory planning, just a direct comparison of feedback controllers. I implemented and compared plain PD, PD with feedforward gravity compensation, PD with desired-state gravity compensation, and PID with anti-windup, tracking both static setpoints and full paths.</p>
+    <div class="pair">
+      <figure><div class="gallery-img-box"><video controls preload="metadata"><source src="../assets/robotics/2r-arm-grav-comp.mp4" type="video/mp4"></video></div><figcaption>The 2R arm converging to a setpoint under gravity-compensated PD control, from two different initial conditions.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/robotics/gravcomp-error-torque.png" alt="Position error and joint torque convergence for gravity-compensated PD control"></div><figcaption>Position error e(t) and joint torques τ(t) for the same run, both converging cleanly within about half a second.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">7-DoF Arm · Kinematics, Trajectory Generation &amp; Workspace Analysis</span></h2>
+    <p>A separate, larger simulation built around a 7-DoF arm (modeled on the Franka Emika Panda), covering the full pipeline from kinematics to reachability.</p>
+
+    <h3>Inverse Kinematics &amp; Trajectory Generation</h3>
+    <p>I built forward and inverse kinematics from a URDF model, coordinate transforms via PyTransform3D, and trajectory generation across three time-scaling profiles (trapezoidal, cubic, and s-curve) to compare velocity and acceleration behavior along the same path.</p>
+    <div class="gallery gallery-3">
+      <figure>
+        <div class="gallery-img-box"><video controls preload="metadata"><source src="../assets/robotics/trajectory-circle.mp4" type="video/mp4"></video></div>
+        <figcaption>Circular path tracking.</figcaption>
+      </figure>
+      <figure>
+        <div class="gallery-img-box"><video controls preload="metadata"><source src="../assets/robotics/trajectory-spline.mp4" type="video/mp4"></video></div>
+        <figcaption>Spline path tracking.</figcaption>
+      </figure>
+      <figure>
+        <div class="gallery-img-box"><video controls preload="metadata"><source src="../assets/robotics/trajectory-straightline.mp4" type="video/mp4"></video></div>
+        <figcaption>Straight-line path tracking.</figcaption>
+      </figure>
+    </div>
+
+    <h3>Workspace Envelope Analysis (Monte Carlo)</h3>
+    <p>Using the same 7-DoF arm, I characterized how much of 3D space it can actually reach: Monte Carlo sampling of 10,000 random joint configurations through the forward kinematics, with a bounding envelope fit to the resulting point cloud.</p>
+    <figure class="figure-full">
+      <img src="../assets/robotics/workspace-3d-envelope.png" alt="3D robot workspace with bounding envelope">
+      <figcaption>Reachable workspace of the 7-DoF arm as a 3D point cloud with a fitted bounding envelope.</figcaption>
+    </figure>
+  </section>
+
+</div>
+
+<div class="project-nav-footer">
+  <a href="linear-stage.html" class="btn btn-ghost">← Previous: Linear Stage</a>
+  <a href="lhr.html" class="btn btn-ghost">Next: Liquid Handling Robot →</a>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Joseph Litjens. Built with plain HTML/CSS/JS.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hull Design · Senior Capstone | Joseph Litjens</title>
+<meta name="description" content="A modular 3D-printed mold for a carbon fiber solar-race boat hull, built with a 5-person senior design team.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hull Design · Senior Capstone | Joseph Litjens">
+<meta property="og:description" content="A modular 3D-printed mold for a carbon fiber solar-race boat hull, built with a 5-person senior design team.">
+<meta property="og:url" content="https://josephlitjens.github.io/projects/hull-mold.html">
+<meta property="og:image" content="https://josephlitjens.github.io/assets/hull-mold/hero-mold-sections.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="site-header" id="top">
+  <nav class="nav">
+    <a class="nav-logo" href="../index.html">JL</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger">Projects <span class="nav-caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="shutter.html">Shutter</a></li>
+          <li><a href="toltransform.html">TolTransform</a></li>
+          <li><a href="linear-stage.html">Linear Stage</a></li>
+          <li><a href="robotics.html">Robotics</a></li>
+          <li><a href="lhr.html">Liquid Handling Robot</a></li>
+          <li><a href="hull-mold.html">Hull Design</a></li>
+          <li class="nav-dropdown-divider"></li>
+          <li><a href="other.html">Other Projects</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="../index.html">← All Projects</a></div>
+
+<div class="project-hero">
+  <div class="project-hero-img"><img src="../assets/hull-mold/hero-mold-sections.png" alt="Three-section modular hull mold render"></div>
+  <div class="project-hero-head reveal">
+    <p class="project-hero-tag">Senior Capstone (MEC 440/441) · Sep 2025 – May 2026</p>
+    <h1>Hull Design</h1>
+    <div class="project-hero-meta">
+      <span><strong>Team:</strong> 5 engineers</span>
+      <span><strong>Client:</strong> Stony Brook Solar Racing Team</span>
+      <span><strong>Advisor:</strong> Austin Giordano</span>
+    </div>
+    <p class="skills-used-label">Key Skills</p>
+    <ul class="tag-row">
+      <li>Mechanical Design</li>
+      <li>Hydrodynamic Analysis</li>
+      <li>Composite Manufacturing</li>
+      <li>3D Printing</li>
+      <li>Experimental Testing</li>
+    </ul>
+  </div>
+</div>
+
+<div class="project-body">
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Overview</span></h2>
+    <p>A 5-person senior capstone team designed and built a modular, 3D-printed mold for a carbon fiber planing hull for the Stony Brook Solar Racing Team's boat. The hull was modeled and analyzed for resistance, then validated by tow-tank testing a scale model. I owned the mold design directly: geometry, module joints, and vacuum system sizing.</p>
+    <div class="note-box"><strong>Scope note:</strong> this was a team project. The hydrostatic analysis, resistance modeling, and tow-tank testing below were team-level work; my specific contributions are broken out separately.</div>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">My Contributions</span></h2>
+    <div class="result-box">
+      <div class="result-label">Mold Design</div>
+      <p>Owned the mold design concept (positive mold, top/bottom geometry), ran two rounds of mold geometry optimization, redesigned the module joints, and calculated the vacuum pump specification for the resin infusion process.</p>
+    </div>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Hull Design &amp; Performance</span></h2>
+    <p>The team modeled the hull in Rhino3D and used Orca3D's planing-hull tools (Savitsky method) to predict resistance across speed and loading condition, then validated those predictions against physical testing: a ⅓-scale model in the tow tank at Stevens Institute of Technology, with three different center-of-gravity positions to see how load distribution affects resistance.</p>
+    <div class="gallery gallery-2">
+      <figure><div class="gallery-img-box"><img src="../assets/hull-mold/hull-geometry.png" alt="Hull wireframe geometry in Rhino"></div><figcaption>Hull geometry: planing hull wireframe with deadrise and chine definition.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/hull-mold/hydrostatics.png" alt="Orca3D hydrostatic stability analysis showing CG, CF, CB"></div><figcaption>Hydrostatic analysis: center of gravity, flotation, and buoyancy for stability prediction.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Tow-Tank Validation</span></h2>
+    <p>The scale model was instrumented and run through the tow tank at Stevens Institute of Technology to validate the Orca3D resistance predictions against physical data.</p>
+    <div class="pair">
+      <figure><div class="gallery-img-box"><img src="../assets/hull-mold/instrumented-model.jpg" alt="Instrumented scale model for tow-tank testing"></div><figcaption>The scale model wired for instrumentation ahead of testing.</figcaption></figure>
+      <figure><div class="gallery-img-box"><video controls preload="metadata"><source src="../assets/hull-mold/tow-tank-test.mp4" type="video/mp4"></video></div><figcaption>Tow-tank run at Stevens Institute of Technology.</figcaption></figure>
+    </div>
+    <figure class="figure-full">
+      <img src="../assets/hull-mold/resistance-plot.png" alt="Resistance vs hull speed for three LCG positions">
+      <figcaption>Resistance vs. hull speed across three longitudinal center-of-gravity positions, from tow-tank testing of the scale model.</figcaption>
+    </figure>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Modular Mold Design</span></h2>
+    <p>The core design problem I owned: the full-scale mold is too large to move through a standard doorway or elevator in one piece. I designed it as a 3-section positive mold (bow, midsection, and aft) with flanged joints between sections so each piece could be handled independently and the whole thing reassembled on site. Getting the joints right took two full redesign iterations to balance sealing, alignment, and print time.</p>
+    <figure class="figure-full">
+      <img src="../assets/hull-mold/hero-mold-sections.png" alt="Exploded render of the three mold sections">
+      <figcaption>The 3-section modular mold, exploded: bow, midsection, and aft sections with flanged joints.</figcaption>
+    </figure>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Manufacturing</span></h2>
+    <p>The mold sections were 3D printed at scale, then carbon fiber was laid over the mold and infused with resin under vacuum to form the hull skin. I calculated the vacuum pump sizing for that process.</p>
+    <div class="gallery gallery-2">
+      <figure><div class="gallery-img-box"><img src="../assets/hull-mold/printed-mold-crop.jpg" alt="Printed scale hull mold"></div><figcaption>The printed scale-model mold.</figcaption></figure>
+      <figure><div class="gallery-img-box"><img src="../assets/hull-mold/carbon-fiber-coupon.jpg" alt="Carbon fiber test coupon"></div><figcaption>A carbon fiber test coupon from the layup process.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="project-section reveal">
+    <h2><span class="section-num">Acknowledgements</span></h2>
+    <div class="ack-box">
+      Senior capstone project (MEC 440/441), Stony Brook University, advised by Austin Giordano and Professor Jay Mendelson, for client Stony Brook Solar Racing Team. Team: Steven Chen, Ryan Tang, Joseph Litjens, Brian Hui, Nick Zhang. Tow-tank testing conducted at Stevens Institute of Technology.
+    </div>
+  </section>
+
+</div>
+
+<div class="project-nav-footer">
+  <a href="lhr.html" class="btn btn-ghost">← Previous: Liquid Handling Robot</a>
+  <a href="other.html" class="btn btn-ghost">Next: Other Projects →</a>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Joseph Litjens. Built with plain HTML/CSS/JS.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

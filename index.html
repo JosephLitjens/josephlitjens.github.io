@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joseph Litjens | Mechanical Engineer</title>
+<meta name="description" content="Portfolio of Joseph Litjens: precision mechanical design, robotics, and automation.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Joseph Litjens | Mechanical Engineer">
+<meta property="og:description" content="Portfolio of Joseph Litjens: precision mechanical design, robotics, and automation.">
+<meta property="og:url" content="https://josephlitjens.github.io/">
+<meta property="og:image" content="https://josephlitjens.github.io/assets/shared/hero-personal.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="site-header" id="top">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html">JL</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger">Projects <span class="nav-caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="projects/shutter.html">Shutter</a></li>
+          <li><a href="projects/toltransform.html">TolTransform</a></li>
+          <li><a href="projects/linear-stage.html">Linear Stage</a></li>
+          <li><a href="projects/robotics.html">Robotics</a></li>
+          <li><a href="projects/lhr.html">Liquid Handling Robot</a></li>
+          <li><a href="projects/hull-mold.html">Hull Design</a></li>
+          <li class="nav-dropdown-divider"></li>
+          <li><a href="projects/other.html">Other Projects</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner reveal">
+      <div>
+        <p class="eyebrow">Mechanical Engineer · Precision Design &amp; Automation</p>
+        <h1>Joseph Litjens</h1>
+        <p class="hero-sub">I design and build precision hardware. My work so far spans semiconductor lithography, synchrotron beamlines, and lab automation.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/shared/hero-personal.jpg" alt="Joseph Litjens in a cleanroom suit at ASML">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner reveal">
+      <h2 class="section-title">About</h2>
+      <p class="about-text">
+        I'm a mechanical engineer interested in precision machine design, high-tech automation, and optomechanics, equally comfortable in simulation and on the factory floor. My direct experience is in the semiconductor and lab automation industries, working with precision hardware, vacuum systems, and industrial automation.
+      </p>
+      <p class="about-text">
+        My approach to problem solving is practical: get to the root of the issue and favor simple solutions over clever ones. Cost is a core design constraint for me, not an afterthought, and I'm always looking to push beyond raw performance metrics.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="section-inner reveal">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>CAD &amp; Design</h3>
+          <p>Siemens NX · Autodesk Inventor · Fusion 360 · PDM/PLM (Vault, Teamcenter) · GD&amp;T (ASME Y14.5) · Tolerance Stackup Analysis · DfMA · Trade Studies / Pugh Matrices</p>
+        </div>
+        <div class="skill-group">
+          <h3>Analysis &amp; Simulation</h3>
+          <p>FEA (Ansys, Abaqus, NX Design Sim) · First-Principles (Beam Theory, Contact Stress) · Monte Carlo · Optimization</p>
+        </div>
+        <div class="skill-group">
+          <h3>Manufacturing</h3>
+          <p>3D Printing · Milling · Lathe · Laser Cutting · Sheet Metal · EDM · Adhesive Bonding · Carbon Fiber Layup</p>
+        </div>
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <p>Python · MATLAB · C++ (Embedded) · Claude Code / Copilot</p>
+        </div>
+        <div class="skill-group">
+          <h3>Robotics &amp; Controls</h3>
+          <p>Advanced Control Theory · Forward/Inverse Kinematics &amp; Dynamics · Trajectory Generation · Motor Control · Screw Theory</p>
+        </div>
+        <div class="skill-group">
+          <h3>Electronics &amp; Instrumentation</h3>
+          <p>Soldering &amp; Breadboarding · Instrumentation (Oscilloscopes, Function Generators) · Analog &amp; Semiconductor Devices · Pneumatic Systems · Mechanical Testing (Tensile, Force Gauges) · Optical Inspection</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (position overviews only; full detail lives on project pages, not repeated from resume) -->
+  <section id="experience" class="section">
+    <div class="section-inner reveal">
+      <h2 class="section-title">Experience</h2>
+      <div class="pair" style="margin: 0 0 32px;">
+        <figure><div class="gallery-img-box" style="aspect-ratio: 16/7;"><img src="assets/shared/asml-cleanroom-stock.jpg" alt="ASML EUV lithography system in a cleanroom"></div></figure>
+        <figure><div class="gallery-img-box" style="aspect-ratio: 16/7;"><img src="assets/shared/nsls-sign.jpg" alt="Joseph Litjens outside the NSLS II building at Brookhaven National Laboratory"></div></figure>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Mechanical Design Engineer Intern</div>
+            <div class="exp-org">ASML · Wilton, CT</div>
+          </div>
+          <div class="exp-date">May 2026 – Aug 2026</div>
+          <p class="exp-desc">Level Sensor Team · Precision Design &amp; Optomechanics (EUV &amp; DUV)</p>
+        </div>
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Mechanical Design Engineer Intern</div>
+            <div class="exp-org">ASML · Wilton, CT</div>
+          </div>
+          <div class="exp-date">May 2025 – Aug 2025</div>
+          <p class="exp-desc">High-NA Reticle Position Alignment Sensor Team · Precision Design &amp; Optomechanics</p>
+        </div>
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Mechanical Engineer Intern · SULI Program</div>
+            <div class="exp-org">Brookhaven National Laboratory · NSLS II</div>
+          </div>
+          <div class="exp-date">Jun 2024 – Aug 2024</div>
+          <p class="exp-desc">Beamline Engineering Group. Mechanical design for lab automation.</p>
+        </div>
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Research Aide, Mechanical Engineering</div>
+            <div class="exp-org">Stony Brook University</div>
+          </div>
+          <div class="exp-date">Aug 2023 – May 2024</div>
+          <p class="exp-desc">Low-Cost Lab Automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section section-alt">
+    <div class="section-inner reveal">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="edu-head">
+          <h3>M.S. Mechanical Engineering</h3>
+          <span class="stat-label" style="font-family: var(--mono);">Aug 2026 – May 2027 (in progress)</span>
+        </div>
+        <p class="edu-org">Stony Brook University · Accelerated B.E./M.S. Program</p>
+      </div>
+      <div class="edu-item">
+        <div class="edu-head">
+          <h3>B.E. Mechanical Engineering</h3>
+          <span class="stat-label" style="font-family: var(--mono);">Conferred May 2026</span>
+        </div>
+        <p class="edu-org">Stony Brook University · Summa Cum Laude · University Scholars</p>
+        <p class="edu-detail">Tau Beta Pi &amp; Pi Tau Sigma honor societies · Dean's List all 8 semesters</p>
+        <div class="stat" style="margin-top: 14px;"><span class="stat-num">3.97</span><span class="stat-label">GPA</span></div>
+      </div>
+      <div class="figure-full" style="max-width: 300px; margin: 24px auto 0;">
+        <img src="assets/shared/grad-photo.jpg" alt="Joseph Litjens at Stony Brook University graduation, outside the Engineering building">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-inner-wide reveal">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+
+        <article class="project-card featured">
+          <div class="project-card-img"><img src="assets/shutter/hero-installation.jpg" alt="The HXN endstation at NSLS II"></div>
+          <div class="project-card-body">
+            <h3>Automated HXN Endstation Shutter</h3>
+            <p>A modular, pneumatically actuated shutter system designed and installed at the Hard X-Ray Nanoprobe beamline at Brookhaven National Laboratory, still in daily use.</p>
+            <div class="project-card-link"><a href="projects/shutter.html">View project →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card featured">
+          <div class="project-card-img"><img src="assets/toltransform/hero-interferometer.png" alt="TolTransform rendered optical interferometer setup"></div>
+          <div class="project-card-body">
+            <h3>TolTransform</h3>
+            <p>A kinematic tolerance analysis and inverse allocation tool for precision assemblies: SE(3) error propagation, Monte Carlo simulation, and convex optimization. Built AI-assisted in about a week.</p>
+            <div class="project-card-link"><a href="projects/toltransform.html">View project →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-img"><img src="assets/linear-stage/hero-module.jpg" alt="Precision linear stage module"></div>
+          <div class="project-card-body">
+            <h3>Linear Stage Module &amp; Characterization</h3>
+            <p>A low-cost precision linear stage, plus the custom embedded system and vision software built to characterize it.</p>
+            <div class="project-card-link"><a href="projects/linear-stage.html">View project →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-img"><img src="assets/robotics/workspace-3d-envelope.png" alt="Robot workspace envelope simulation"></div>
+          <div class="project-card-body">
+            <h3>Robotics Projects</h3>
+            <p>Kinematics and control simulations: PD/PID arm control, inverse kinematics, and workspace analysis.</p>
+            <div class="project-card-link"><a href="projects/robotics.html">View project →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-img"><img src="assets/lhr/hero-robot.jpg" alt="Liquid handling robot"></div>
+          <div class="project-card-body">
+            <h3>Liquid Handling Robot</h3>
+            <p>A CoreXY liquid-handling robot for qPCR prep, built solo as a low-cost alternative to commercial systems.</p>
+            <div class="project-card-link"><a href="projects/lhr.html">View project →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-img"><img src="assets/hull-mold/hero-mold-sections.png" alt="Modular 3D-printed hull mold"></div>
+          <div class="project-card-body">
+            <h3>Hull Design · Senior Capstone</h3>
+            <p>Planing hull design and a modular 3D-printed mold for a carbon fiber solar-race boat, built with a 5-person team.</p>
+            <div class="project-card-link"><a href="projects/hull-mold.html">View project →</a></div>
+          </div>
+        </article>
+
+        <article class="project-card featured light">
+          <div class="project-card-img"><img src="assets/other/rotstage-flexure-photo.jpg" alt="Assorted smaller projects"></div>
+          <div class="project-card-body">
+            <h3>Other Projects</h3>
+            <p>Shorter write-ups: an instrumentation rack, a BNL flexure rotation stage, an analog PID controller lab, and a heat transfer study.</p>
+            <div class="project-card-link"><a href="projects/other.html">View all four →</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-contact">
+    <div class="section-inner reveal">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:josephlitjens@gmail.com" class="contact-link"><span class="contact-label">Email</span><span class="contact-value">josephlitjens@gmail.com</span></a>
+        <a href="https://www.linkedin.com/in/joseph-litjens/" target="_blank" rel="noopener" class="contact-link"><span class="contact-label">LinkedIn</span><span class="contact-value">linkedin.com/in/joseph-litjens</span></a>
+        <a href="https://github.com/JosephLitjens" target="_blank" rel="noopener" class="contact-link"><span class="contact-label">GitHub</span><span class="contact-value">github.com/JosephLitjens</span></a>
+        <a href="https://www.youtube.com/@LIT123J" target="_blank" rel="noopener" class="contact-link"><span class="contact-label">YouTube</span><span class="contact-value">youtube.com/@LIT123J</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Joseph Litjens. Built with plain HTML/CSS/JS.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
