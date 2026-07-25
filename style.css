@@ -150,7 +150,6 @@ img, video { max-width: 100%; display: block; }
 .section-inner-wide { max-width: var(--max-w-wide); margin: 0 auto; }
 .section-title { font-size: 1.85rem; font-weight: 700; margin-bottom: 44px; display: flex; align-items: baseline; gap: 14px; }
 .section-num { font-family: var(--mono); color: var(--accent); font-size: 1rem; font-weight: 500; }
-.section-lead { color: var(--text-dim); font-size: 1.02rem; max-width: 720px; margin: -24px 0 40px; }
 
 .about-text { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 20px; max-width: 760px; }
 
