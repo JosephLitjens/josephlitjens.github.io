@@ -87,7 +87,7 @@
       <figure><div class="gallery-img-box"><img src="../assets/linear-stage/coupler.jpg" alt="4-DoF compliant coupler on the lead screw"></div><figcaption>The compliant coupler installed on the lead screw.</figcaption></figure>
       <figure><div class="gallery-img-box"><img src="../assets/linear-stage/coupler-fea-mesh.png" alt="FEA mesh of the coupler"></div><figcaption>FEA mesh for the coupler geometry.</figcaption></figure>
     </div>
-    <p>To confirm the coupler actually flexes the way it's meant to, I ran isolated FEA load cases for each of its four compliant degrees of freedom individually, two rotations and two translations, rather than a single combined case:</p>
+    <p>To confirm the coupler actually flexes the way it's meant to, I ran a modal analysis, finding each of its four primary compliant degrees of freedom, two rotations and two translations:</p>
     <div class="gallery gallery-2">
       <figure><div class="gallery-img-box"><img src="../assets/linear-stage/coupler-dof-rx.gif" alt="FEA showing coupler rotation about X"></div><figcaption>Rotation about X.</figcaption></figure>
       <figure><div class="gallery-img-box"><img src="../assets/linear-stage/coupler-dof-ry.gif" alt="FEA showing coupler rotation about Y"></div><figcaption>Rotation about Y.</figcaption></figure>
@@ -98,7 +98,7 @@
 
   <section class="project-section reveal">
     <h2><span class="section-num">Embedded</span></h2>
-    <p>An Arduino Nano and A4988 stepper driver on a breadboard handle low-level motion control, exposed through a simple serial command set (H = home, M{pos} = move, S = stop). Limit switch feedback and software position/velocity/acceleration limits keep the stage from doing anything destructive if a command is malformed.</p>
+    <p>An Arduino Nano and A4988 stepper driver on a breadboard handle low-level motion control, exposed through a simple serial command set (H = home, M{pos} = move, S = stop). Limit switch feedback and software position/velocity/acceleration limits and a software communication watchdog keep the stage from doing anything destructive if a command is malformed.</p>
     <figure class="figure-full">
       <img src="../assets/linear-stage/circuit.jpg" alt="Breadboard controller circuit">
       <figcaption>The breadboard controller: Arduino Nano and A4988 stepper driver.</figcaption>
